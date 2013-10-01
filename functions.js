@@ -38,3 +38,13 @@ var testWords = [
 ];
 document.write('<p>7 -> ' + filterWordLength(testWords, 7) + '</p>');
 document.write('<p>1000 -> ' + filterWordLength(testWords, 100) + '</p>');
+
+/*
+ * Returns a greeting based on the time of day.
+ * Morning is midnight to noon, afternoon is noon to five,
+ * otherwise it's the evening.
+ */
+var dateGreeting = function(date) {
+  var result = '';
+  return result;
+}
