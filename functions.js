@@ -22,5 +22,11 @@ document.write('<h4>Filter Text Array by Length');
  */
 var filterWordLength = function(list, length) {
   var result = [];
+  for(var index = 0; index < list.length; index++) {
+    var element = list[index];
+    if((typeof element === 'string') && (element.length > length)) {
+      result.push(element);
+	}
+  }
   return result;
 }
