@@ -1,17 +1,15 @@
-document.write('<h4>Word Count Example</h4>');
+document.write('<h4>Reverse String</h4>');
 
-var wordCount = function(text) {
-  // \W matches non-word characters, match one or more
-  var tokens = text.split(/\W+/);
-  // account for empty elements at the start or end of the list
-  var count = tokens.length;
-  if(tokens[0] === '') {
-    count--;
+/*
+ * Reverses the characters in the input text
+ */
+var reverseString = function(text) {
+  var result = '';
+  for(var index = text.length - 1; index >= 0; index--) {
+    result += text[index];
   }
-  if(tokens[tokens.length - 1] === '') {
-    count--;
-  }
-  return count;
+  return result;
+//  return text.split('').reverse().join('');
 }
-
-document.write('test 1: ' + wordCount(' one  two three'));
+document.write('<p>hello -> ' + reverseString('hello') + '</p>');
+document.write('<p>a longer example -> ' + reverseString('a longer example') + '</p>');
