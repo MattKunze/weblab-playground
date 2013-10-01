@@ -130,6 +130,18 @@ var movies = [
  * returns the movies sorted by year released
  */
 var movieSort = function(movies) {
-  var result = [];
-  return result;
+  var results = [];
+  for(var index = 0; index < movies.length; index++) {
+    var items = movies[index].split(',');
+    var movie = {
+      title: items[0],
+      year: parseInt(items[1]),
+      votes: parseInt(items[2])
+    };
+    results.push(movie);
+  }
+  return results;
 }
+
+document.write('<pre>' + 
+  JSON.stringify(movieSort(movies), null, '  ') + '</pre>');
