@@ -109,3 +109,27 @@ var makeChange = function(amount) {
 
 document.write('<p>7.23 -> ' + JSON.stringify(makeChange(7.23)) + '</p>');
 document.write('<p>1234.56 -> ' + JSON.stringify(makeChange(1234.56)) + '</p>');
+
+document.write('<h4>Movie Sort</h4>');
+
+var movies = [
+    'The Shawshank Redemption,1994,1043071',
+    'The Godfather,1972,732416',
+    'The Godfather: Part II,1974,474640',
+    'Pulp Fiction,1994,806431',
+    'The Dark Knight,2008,1017508',
+    '12 Angry Men,1957,255846',
+    'Schindler\'s List,1993,528900',
+    'The Lord of the Rings: The Return of the King,2003,738931',
+    'Fight Club,1999,791186',
+    'Star Wars: Episode V - The Empire Strikes Back,1980,503348'
+];
+
+/*
+ * Takes a formatted list of movies, parses the data, and
+ * returns the movies sorted by year released
+ */
+var movieSort = function(movies) {
+  var result = [];
+  return result;
+}
