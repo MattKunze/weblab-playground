@@ -14,7 +14,7 @@ var reverseString = function(text) {
 document.write('<p>hello -> ' + reverseString('hello') + '</p>');
 document.write('<p>a longer example -> ' + reverseString('a longer example') + '</p>');
 
-document.write('<h4>Filter Text Array by Length');
+document.write('<h4>Filter Text Array by Length</h4>');
 
 /*
  * Takes an input array of text items and returns a list of the
@@ -30,3 +30,11 @@ var filterWordLength = function(list, length) {
   }
   return result;
 }
+var testWords = [
+  'short',
+  'longer',
+  'maybe even longer',
+  'a really long sentance or something'
+];
+document.write('<p>7 -> ' + filterWordLength(testWords, 7) + '</p>');
+document.write('<p>1000 -> ' + filterWordLength(testWords, 100) + '</p>');
