@@ -68,3 +68,61 @@ document.write('<p>' + afternoon.toString() +
 var evening = new Date(2013, 8, 30, 21, 00);
 document.write('<p>' + evening.toString() +
   ' -> ' + dateGreeting(evening) + '</p>');
+
+document.write('<h4>Make Change</h4>');
+
+/*
+ * Given a dollar amount, computes the change required
+ * to tender to a customer.
+ * Returned value looks like:
+ * { 'dollars': 1, quarters, 2: etc }
+ */
+var makeChange = function(amount) {
+  var change = {};
+  
+  // convert to pennies to make the math easier
+  amount *= 100;
+  while(amount > 0) {
+    // calculate hundreds
+    if(amount >= 10000) {
+      change.hundreds = parseInt(amount / 10000);
+      amount -= change.hundreds * 10000;
+    }
+    else if(amount >= 5000) {
+      change.fifties = parseInt(amount / 5000);
+      amount -= change.fifties * 5000;
+    }
+    else if(amount >= 1000) {
+      change.tens = parseInt(amount / 1000);
+      amount -= change.tens * 1000;
+    }
+    else if(amount >= 500) {
+      change.fives = parseInt(amount / 500);
+      amount -= change.fives * 500;
+    }
+    else if(amount >= 100) {
+      change.ones = parseInt(amount / 100);
+      amount -= change.ones * 100;
+    }
+    else if(amount >= 25) {
+      change.quarters = parseInt(amount / 25);
+      amount -= change.quarters * 25;
+    }
+    else if(amount >= 10) {
+      change.dimes = parseInt(amount / 10);
+      amount -= change.dimes * 10;
+    }
+    else if(amount >= 5) {
+      change.nickels = parseInt(amount / 5);
+      amount -= change.hundreds * 10000;
+    }
+    else {
+      change.pennies = parseInt(amount);
+      amount = 0;
+    }
+  }
+  
+  return change;
+}
+
+document.write('<p>7.23 -> ' + JSON.stringify(makeChange(7.23)) + '</p>');
