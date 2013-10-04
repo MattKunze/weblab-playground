@@ -1,4 +1,4 @@
-document.write('<h4>Reverse String</h4>');
+//document.write('<h4>Reverse String</h4>');
 
 /*
  * Reverses the characters in the input text
@@ -11,10 +11,10 @@ var reverseString = function(text) {
   return result;
 //  return text.split('').reverse().join('');
 }
-document.write('<p>hello -> ' + reverseString('hello') + '</p>');
-document.write('<p>a longer example -> ' + reverseString('a longer example') + '</p>');
+//document.write('<p>hello -> ' + reverseString('hello') + '</p>');
+//document.write('<p>a longer example -> ' + reverseString('a longer example') + '</p>');
 
-document.write('<h4>Filter Text Array by Length</h4>');
+//document.write('<h4>Filter Text Array by Length</h4>');
 
 /*
  * Takes an input array of text items and returns a list of the
@@ -36,10 +36,10 @@ var testWords = [
   'maybe even longer',
   'a really long sentance or something'
 ];
-document.write('<p>7 -> ' + filterWordLength(testWords, 7) + '</p>');
-document.write('<p>1000 -> ' + filterWordLength(testWords, 100) + '</p>');
+//document.write('<p>7 -> ' + filterWordLength(testWords, 7) + '</p>');
+//document.write('<p>1000 -> ' + filterWordLength(testWords, 100) + '</p>');
 
-document.write('<h4>Date Greeting</h4>');
+//document.write('<h4>Date Greeting</h4>');
 
 /*
  * Returns a greeting based on the time of day of a date.
@@ -59,6 +59,7 @@ var dateGreeting = function(date) {
   }
 }
 
+/*
 var morning = new Date(2013, 8, 30, 2, 34);
 document.write('<p>' + morning.toString() +
   ' -> ' + dateGreeting(morning) + '</p>');
@@ -70,6 +71,7 @@ document.write('<p>' + evening.toString() +
   ' -> ' + dateGreeting(evening) + '</p>');
 
 document.write('<h4>Make Change</h4>');
+*/
 
 /*
  * Given a dollar amount, computes the change required
@@ -107,10 +109,12 @@ var makeChange = function(amount) {
   return change;
 }
 
+/*
 document.write('<p>7.23 -> ' + JSON.stringify(makeChange(7.23)) + '</p>');
 document.write('<p>1234.56 -> ' + JSON.stringify(makeChange(1234.56)) + '</p>');
 
 document.write('<h4>Movie Sort</h4>');
+*/
 
 var movies = [
     'The Shawshank Redemption,1994,1043071',
@@ -160,5 +164,5 @@ var movieSort = function(movies) {
   return results.sort(sortMovies);
 }
 
-document.write('<pre>' + 
+//document.write('<pre>' + 
   JSON.stringify(movieSort(movies), null, '  ') + '</pre>');
