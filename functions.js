@@ -15,9 +15,14 @@ $(document).ready(function() {
   $('.execute-reverse-string').click(function() {
    	var text = $('#reverse-input').val();
     $('#reverse-output').val(reverseString(text));
+    // prevent the form from submitting
     return false;
   });
-  
+  $('.reset-reverse-string').click(function() {
+    $('#reverse-input,#reverse-output').val('');
+    // prevent the form from submitting
+    return false;
+  });
 })
 
 /*
@@ -34,14 +39,29 @@ var filterWordLength = function(list, length) {
   }
   return result;
 }
-var testWords = [
-  'short',
-  'longer',
-  'maybe even longer',
-  'a really long sentance or something'
-];
-//document.write('<p>7 -> ' + filterWordLength(testWords, 7) + '</p>');
-//document.write('<p>1000 -> ' + filterWordLength(testWords, 100) + '</p>');
+
+$(document).ready(function() {
+  
+  $('.add-filter-string').click(function(){
+    var text = $('#new-filter-string').val();
+    if(text) {
+	  $('.filter-string-list').append('<li>' + text + '</li>');
+    }
+    return false;
+  });
+  $('.filter-string-list').click('li', function(ev) {
+    $(ev.target).remove();
+  });
+  $('.execute-filter-list').click(function() {
+    var list = [];
+    $('.filter-string-list li').each(function() {
+      list.push($(this).text());
+    });
+    var length = parseInt($('#filter-length').val());
+    var results = filterWordLength(list, length);
+    $('.filter-results').text(JSON.stringify(results));
+  });
+});
 
 //document.write('<h4>Date Greeting</h4>');
 

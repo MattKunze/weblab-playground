@@ -1,10 +1,10 @@
 <html>
   <head>
     <title>WebLab Playground</title>
-    
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.css" />
   </head>
+  
   <body>
     <nav class="navbar navbar-default" role="navigation">
       <div class="navbar-header">
@@ -30,9 +30,27 @@
                      disabled>
             </div>
             <button class="execute-reverse-string btn btn-default">Reverse</button>
+            <button class="reset-reverse-string btn btn-default">Reset</button>
           </form>
+
+          <h1>Filter String Lengths</h1>
           
-      </div>
+          <form class="form-inline" role="form">
+  			<div class="form-group">
+              <input type="text" class="form-control" id="new-filter-string" placeholder="Add String">
+            </div>
+  			<div class="form-group">
+              <input type="number" class="form-control" id="filter-length" placeholder="Length">
+            </div>
+            <button class="add-filter-string btn btn-default">Add</button>
+          </form>
+          <ul class="filter-string-list">
+          </ul>
+          <button class="execute-filter-list btn btn-default">filter</button>
+          <div class="filter-results panel panel-default"></div>
+
+        </div>
+	  </div>
     </div>
     
     <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
