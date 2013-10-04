@@ -1,5 +1,3 @@
-//document.write('<h4>Reverse String</h4>');
-
 /*
  * Reverses the characters in the input text
  */
@@ -11,10 +9,16 @@ var reverseString = function(text) {
   return result;
 //  return text.split('').reverse().join('');
 }
-//document.write('<p>hello -> ' + reverseString('hello') + '</p>');
-//document.write('<p>a longer example -> ' + reverseString('a longer example') + '</p>');
 
-//document.write('<h4>Filter Text Array by Length</h4>');
+$(document).ready(function() {
+  
+  $('.execute-reverse-string').click(function() {
+   	var text = $('#reverse-input').val();
+    $('#reverse-output').val(reverseString(text));
+    return false;
+  });
+  
+})
 
 /*
  * Takes an input array of text items and returns a list of the
@@ -165,4 +169,4 @@ var movieSort = function(movies) {
 }
 
 //document.write('<pre>' + 
-  JSON.stringify(movieSort(movies), null, '  ') + '</pre>');
+//  JSON.stringify(movieSort(movies), null, '  ') + '</pre>');
