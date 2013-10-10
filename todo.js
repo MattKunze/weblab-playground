@@ -1,11 +1,3 @@
-var templates = {
-  todoItem:
-  		'<div class="todo-item wide">' +
-        '  <span class="toggle">&gt;</span>' +
-        '  <label></label>' +
-        '</div>'
-};
-
 var app = {
   init: function() {
     $('.new-todo').keypress(app.addNewItem);
@@ -17,7 +9,7 @@ var app = {
       // get the new todo label
       var label = $('.new-todo').val();
       // create new todo item and append
-      var newItem = $(templates.todoItem)
+      var newItem = $('.templates .todo-item').clone();
       // update the label
       newItem.find('label').text(label)
       // append to list

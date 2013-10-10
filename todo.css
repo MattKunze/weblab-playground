@@ -28,3 +28,7 @@
 .todo-item.complete label {
   text-decoration: line-through;
 }
+
+.templates {
+  margin-top: 50px;
+}
