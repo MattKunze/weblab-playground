@@ -1,0 +1,30 @@
+.container {
+  width: 500px;
+  margin: 50px auto 0 auto;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+.wide {
+  width: 100%;
+}
+
+.hide {
+  display: none;
+}
+
+.todo-item {
+  border: 1px solid #eee;
+  margin-top: 5px;
+}
+.todo-item span,
+.todo-item label {
+  margin: 10px 5px;
+}
+
+.todo-item.complete .toggle {
+	color: green;
+}
+.todo-item.complete label {
+  text-decoration: line-through;
+}
