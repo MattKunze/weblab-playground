@@ -2,6 +2,9 @@ var app = {
   init: function() {
     $('.new-todo').keypress(app.addNewItem);
     $('.todo-list').on('click', '.toggle', app.toggleStatus);
+    $('.show-all').click(app.showAll);
+    $('.show-active').click(app.showActive);
+    $('.show-complete').click(app.showComplete);
   },
   addNewItem: function(ev) {
     // when keypress is enter
@@ -25,7 +28,18 @@ var app = {
     app.updateRemaining();
   },
   updateRemaining: function() {
-    var remaining = $('.todo-item').not('.complete');
+    var remaining = $('.todo-list .todo-item').not('.complete');
     $('.remaining').text(remaining.length + ' remaining');
+  },
+  showAll: function() {
+    $('.todo-item').show();
+  },
+  showActive: function() {
+    $('.todo-item').not('.complete').show();
+    $('.todo-item.complete').hide();
+  },
+  showComplete: function() {
+    $('.todo-item').not('.complete').hide();
+    $('.todo-item.complete').show();
   }
 }
