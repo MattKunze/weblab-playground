@@ -3,6 +3,7 @@ var app = {
     $('.new-todo').keypress(app.addNewItem);
     $('.todo-list').on('click', '.toggle', app.toggleStatus);
 	$('.todo-list').on('dblclick', '.todo-item label', app.beginEdit);
+    $('.todo-list').on('blur', '.todo-item input', app.endEdit);
     $('.todo-list').on('keypress', '.todo-item input', app.editKeypress);
     $('.show-all').click(app.showAll);
     $('.show-active').click(app.showActive);
@@ -30,8 +31,6 @@ var app = {
     app.updateRemaining();
   },
   beginEdit: function(ev) {
-    // end current edit
-    $('.todo-list').removeClass('edit');
     var todo = $(ev.target).closest('.todo-item');
     // adding a class to display
     todo.addClass('edit');
@@ -42,16 +41,19 @@ var app = {
       .focus();
     return false;
   },
+  endEdit: function() {
+    // get value of the input
+    var todo = $('.todo-item.edit');
+    var value = todo.find('input').val();
+    // update the label to the new value
+    todo.find('label').text(value);
+    // hide the input
+    todo.removeClass('edit');    
+  },
   editKeypress: function(ev) {
-    // if enter key pressed
+    // end edit if enter key pressed
     if(ev.which === 13) {
-      // get value of the input
-	  var todo = $(ev.target).closest('.todo-item');
-      var value = todo.find('input').val();
-      // update the label to the new value
-      todo.find('label').text(value);
-      // hide the input
-      todo.removeClass('edit');
+      app.endEdit();
     }
   },
   updateRemaining: function() {
