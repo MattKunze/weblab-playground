@@ -24,10 +24,21 @@
 .todo-item {
   border: 1px solid #eee;
   margin-top: 5px;
+  height: 25px;
 }
-.todo-item span,
-.todo-item label {
+.todo-item span {
   margin: 10px 5px;
+}
+.todo-item label,
+.todo-item input {
+  position: absolute;
+}
+
+.todo-item input {
+  display: none;
+}
+.todo-item.edit input {
+  display: inline;
 }
 
 .todo-item.complete .toggle {
