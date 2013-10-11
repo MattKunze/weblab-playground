@@ -13,6 +13,14 @@
   display: none;
 }
 
+.todo-list.show-active .complete {
+  display: none; 
+}
+
+.todo-list.show-complete .todo-item:not(.complete) {
+  display: none; 
+}
+
 .todo-item {
   border: 1px solid #eee;
   margin-top: 5px;

@@ -32,14 +32,14 @@ var app = {
     $('.remaining').text(remaining.length + ' remaining');
   },
   showAll: function() {
-    $('.todo-item').show();
+    $('.todo-list').removeClass('show-active show-complete');
   },
   showActive: function() {
-    $('.todo-item').not('.complete').show();
-    $('.todo-item.complete').hide();
+    $('.todo-list').removeClass('show-complete');
+    $('.todo-list').addClass('show-active');
   },
   showComplete: function() {
-    $('.todo-item').not('.complete').hide();
-    $('.todo-item.complete').show();
+    $('.todo-list').removeClass('show-active');
+    $('.todo-list').addClass('show-complete');
   }
 }
