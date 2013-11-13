@@ -2,6 +2,12 @@
  * Reverses the characters in the input text
  */
 var reverseString = function(text) {
+  if(text === null) {
+    return null;
+  }
+  if(typeof text !== 'string') {
+    throw new Error('strings only, please');
+  }
   var result = '';
   for(var index = text.length - 1; index >= 0; index--) {
     result += text[index];
