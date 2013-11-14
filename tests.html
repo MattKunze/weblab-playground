@@ -11,17 +11,22 @@
     <!-- include test framework -->
     <script src="mocha/mocha.js"></script>
     <script src="chai/chai.js"></script>
+    <script src="sinon-1.7.3.js"></script>
+
     <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
     <script>
       mocha.setup('bdd');
       var expect = chai.expect;
     </script>
     <!-- include local tests -->
-    <script src="tests.js"></script>
+    <script src="function-tests.js"></script>
+    <script src="todo-tests.js"></script>
     <!-- include code to be tested -->
     <script src="functions.js"></script>
+    <script src="todo.js"></script>
     <script>
       mocha.run();
     </script>
+    
   </body>
 </html>

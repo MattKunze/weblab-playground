@@ -1,5 +1,5 @@
 var app = {
-  init: function() {
+  init: function(options) {
     $('.new-todo').keypress(app.newKeypress);
     $('.todo-list').on('click', '.toggle', app.toggleStatus);
 	$('.todo-list').on('dblclick', '.todo-item label', app.beginEdit);
@@ -9,7 +9,10 @@ var app = {
     $('.show-active').click(app.showActive);
     $('.show-complete').click(app.showComplete);
     
-    app.loadList();
+    // needed by test harness to initialize event bindings
+    if(!options || !options.skipLoad) {
+	  app.loadList();
+    }
   },
   addNewItem: function(label, status) {
     // create new todo item and append
